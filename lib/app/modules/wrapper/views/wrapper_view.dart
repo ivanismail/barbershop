@@ -1,22 +1,41 @@
+import 'package:double_back_to_close_app/double_back_to_close_app.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 
+import '../../../widgets/bottom_navbar.dart';
 import '../controllers/wrapper_controller.dart';
 
-class WrapperView extends GetView<WrapperController> {
-  const WrapperView({Key? key}) : super(key: key);
+class WrapperView extends StatefulWidget {
+  WrapperView({Key? key}) : super(key: key);
+
+  @override
+  State<WrapperView> createState() => _WrapperViewState();
+}
+
+class _WrapperViewState extends State<WrapperView> {
+  final WrapperController controller = Get.find<WrapperController>();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('WrapperView'),
-        centerTitle: true,
+      bottomNavigationBar: GetBuilder<WrapperController>(
+        init: WrapperController(),
+        initState: (_) {},
+        builder: (_) {
+          return BuildBottomNavBar(
+            controller: controller,
+          );
+        },
       ),
-      body: const Center(
-        child: Text(
-          'WrapperView is working',
-          style: TextStyle(fontSize: 20),
+      body: DoubleBackToCloseApp(
+        child: Obx(() => controller.currentPage[controller.pageIndex.value]),
+        snackBar: SnackBar(
+          content: Text('Ketuk sekali lagi untuk keluar.'),
         ),
       ),
     );

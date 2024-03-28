@@ -12,7 +12,6 @@ void main() {
       theme: XTheme.themeData(),
       builder: (context, child) {
         return MediaQuery(
-          // ignore: sort_child_properties_last
           child: child!,
           data: MediaQuery.of(context).copyWith(textScaleFactor: .9),
         );

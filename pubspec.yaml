@@ -13,9 +13,9 @@ dependencies:
   google_fonts: ^4.0.4
   double_back_to_close_app: ^2.0.1
   flutter_svg: ^1.1.6
+  intl: ^0.17.0
 
 dev_dependencies: 
-  flutter_lints: ^2.0.0
   flutter_test: 
     sdk: flutter
 

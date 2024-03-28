@@ -1,23 +1,113 @@
-import 'package:get/get.dart';
+import '../../../export.dart';
+import '../../../widgets/bottom_navbar.dart';
+import '../../home/views/home_view.dart';
 
 class WrapperController extends GetxController {
-  //TODO: Implement WrapperController
+  final pageIndex = 0.obs;
+  String connectionStatus = 'Unknown';
+  // final Connectivity connectivity = Connectivity();
+  // late StreamSubscription<ConnectivityResult> connectivitySubscription;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  List<Widget> get currentPage {
+    return [
+      HomeView(),
+      HomeView(),
+      HomeView(),
+    ];
+  }
+
+  List<BottomNavigationBarItem> get bottomMenuItem {
+    return [
+      BottomNavigationBarItem(
+        label: 'Beranda',
+        icon: BuildIconNavBar(
+          currentTab: this.pageIndex.value,
+          index: 0,
+          svg: 'home',
+          svgActive: 'home-fill',
+        ),
+      ),
+      BottomNavigationBarItem(
+        label: 'Transaksi',
+        icon: BuildIconNavBar(
+          currentTab: this.pageIndex.value,
+          index: 1,
+          svg: 'receipt',
+          svgActive: 'receipt-fill',
+        ),
+      ),
+      BottomNavigationBarItem(
+        label: 'Profil',
+        icon: BuildIconNavBar(
+          currentTab: this.pageIndex.value,
+          index: 2,
+          svg: 'user',
+          svgActive: 'user-fill',
+        ),
+      )
+    ];
   }
 
   @override
-  void onReady() {
+  void onInit() async {
+    super.onInit();
+
+    // initConnectivity();
+    // connectivitySubscription =
+    //     connectivity.onConnectivityChanged.listen(updateConnectionStatus);
+  }
+
+  updateBottomNavbar() {
+    update();
+  }
+
+  void onTapBottomNavbar(int index) async {
+    // if (!checkToken()) {
+    //   await Get.toNamed(Routes.AUTH);
+    //   return;
+    // }
+
+    this.pageIndex.value = index;
+  }
+
+  @override
+  void onReady() async {
     super.onReady();
+    print('================ Ready Wrapper ================');
+
+    // await this.doCheckAppVersion();
   }
 
   @override
   void onClose() {
-    super.onClose();
+    // connectivitySubscription.cancel();
+    super.dispose();
   }
 
-  void increment() => count.value++;
+  // Platform messages are asynchronous, so we initialize in an async method.
+  // Future<void> initConnectivity() async {
+  //   ConnectivityResult result = ConnectivityResult.none;
+  //   // Platform messages may fail, so we use a try/catch PlatformException.
+  //   try {
+  //     result = await connectivity.checkConnectivity();
+  //   } on PlatformException catch (e) {
+  //     print(e.toString());
+  //   }
+
+  //   return updateConnectionStatus(result);
+  // }
+
+  // Future<void> updateConnectionStatus(ConnectivityResult result) async {
+  //   if (result == ConnectivityResult.none) {
+  //     XDialog.errorConnection(
+  //       message: 'Silahkan periksa koneksi internet anda.',
+  //       actionText: 'Tutup',
+  //       onTap: () => exit(1),
+  //     );
+  //   } else {
+  //     Get.back();
+  //   }
+
+  //   print(result);
+  // }
 }
