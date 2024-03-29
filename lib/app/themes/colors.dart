@@ -3,9 +3,10 @@
 import 'package:flutter/material.dart';
 
 class XColor {
-  static Color primary() => Color(0xff00B0F1);
+  static Color primary() => Color(0xff2164F3);
+  static Color primaryLight() => Color(0xffBACFFB);
   static Color primaryDark() => Color(0xff403F94);
-  static Color secondary() => Color(0xFFFFE37C);
+  static Color secondary() => Color(0xFF3C7AFF);
 
   static Color success() => Color(0xff3B9659);
   static Color successLight() => Color(0xffE5FFED);

@@ -13,7 +13,15 @@ dependencies:
   google_fonts: ^4.0.4
   double_back_to_close_app: ^2.0.1
   flutter_svg: ^1.1.6
+  connectivity_plus: ^4.0.2
   intl: ^0.17.0
+  cached_network_image: ^3.1.0
+  get_storage: ^2.1.1
+  http: ^0.13.3
+  smooth_page_indicator: ^1.0.0+2
+  jiffy: ^4.1.0
+  image_picker: ^1.0.0
+  mime: ^1.0.0
 
 dev_dependencies: 
   flutter_test: 

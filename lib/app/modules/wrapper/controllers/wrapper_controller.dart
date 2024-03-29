@@ -19,7 +19,7 @@ class WrapperController extends GetxController {
   List<BottomNavigationBarItem> get bottomMenuItem {
     return [
       BottomNavigationBarItem(
-        label: 'Beranda',
+        label: 'Home',
         icon: BuildIconNavBar(
           currentTab: this.pageIndex.value,
           index: 0,
@@ -28,7 +28,7 @@ class WrapperController extends GetxController {
         ),
       ),
       BottomNavigationBarItem(
-        label: 'Transaksi',
+        label: 'Tranaction',
         icon: BuildIconNavBar(
           currentTab: this.pageIndex.value,
           index: 1,
@@ -37,7 +37,7 @@ class WrapperController extends GetxController {
         ),
       ),
       BottomNavigationBarItem(
-        label: 'Profil',
+        label: 'Profile',
         icon: BuildIconNavBar(
           currentTab: this.pageIndex.value,
           index: 2,
