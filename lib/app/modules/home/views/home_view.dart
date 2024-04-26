@@ -1,3 +1,4 @@
+import 'package:barbershop/app/routes/app_pages.dart';
 import 'package:barbershop/app/utils/utils.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -87,9 +88,12 @@ class _HomeViewState extends State<HomeView> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text('Our \nService', style: h5n),
-                        Text(
-                          'See All',
-                          style: h5n.copyWith(color: XColor.primary()),
+                        XRipple(
+                          onTap: () => Get.toNamed(Routes.SERVICE),
+                          child: Text(
+                            'See All',
+                            style: h5n.copyWith(color: XColor.primary()),
+                          ),
                         ),
                       ],
                     ),
