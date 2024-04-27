@@ -1,3 +1,6 @@
+import 'package:barbershop/app/routes/app_pages.dart';
+import 'package:barbershop/app/widgets/ripple.dart';
+
 import '../../../export.dart';
 import '../../../utils/utils.dart';
 import '../../../widgets/appbar.dart';
@@ -62,37 +65,40 @@ class ServiceCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(8),
-                    width: 48,
-                    height: 48,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: XColor.primaryLight(),
+        XRipple(
+          onTap: () => Get.toNamed(Routes.ORDER),
+          child: Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(8),
+                      width: 48,
+                      height: 48,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: XColor.primaryLight(),
+                      ),
+                      child: SvgPicture.asset(
+                        'assets/beard.svg',
+                        height: 32,
+                      ),
                     ),
-                    child: SvgPicture.asset(
-                      'assets/beard.svg',
-                      height: 32,
+                    Spacing(width: 12),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Potong Rambut'),
+                        Text('Rp. 18.000,-'),
+                      ],
                     ),
-                  ),
-                  Spacing(width: 12),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Potong Rambut'),
-                      Text('Rp. 18.000,-'),
-                    ],
-                  ),
-                ],
-              ),
-              SvgPicture.asset('assets/arrow-right.svg', width: 24)
-            ],
+                  ],
+                ),
+                SvgPicture.asset('assets/arrow-right.svg', width: 24)
+              ],
+            ),
           ),
         ),
         Spacing()

@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/order/bindings/order_binding.dart';
+import '../modules/order/views/order_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
 import '../modules/service/bindings/service_binding.dart';
@@ -38,6 +40,11 @@ class AppPages {
       name: _Paths.SERVICE,
       page: () => const ServiceView(),
       binding: ServiceBinding(),
+    ),
+    GetPage(
+      name: _Paths.ORDER,
+      page: () => const OrderView(),
+      binding: OrderBinding(),
     ),
   ];
 }

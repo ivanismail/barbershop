@@ -71,7 +71,7 @@ class SolidButton extends StatelessWidget {
                             fontSize: h3,
                             color: this.inactive
                                 ? XColor.netral1()
-                                : XColor.netral8(),
+                                : XColor.netral1(),
                             fontWeight: FontWeight.w600,
                           ),
                     ),
@@ -83,7 +83,7 @@ class SolidButton extends StatelessWidget {
                       TextStyle(
                         fontSize: h3,
                         color:
-                            this.inactive ? XColor.netral1() : XColor.netral8(),
+                            this.inactive ? XColor.netral1() : XColor.netral1(),
                         fontWeight: FontWeight.w600,
                       ),
                 ),
